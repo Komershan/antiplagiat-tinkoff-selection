@@ -1,5 +1,6 @@
 from math import exp
 from random import uniform
+from primitives import MyMatrix
 
 
 def sigmoid(x: float):
@@ -32,10 +33,10 @@ class MyLogisticRegression:
 
         for epochs_passed in range(epochs):
             grads = self.get_gradient(X, y, self.predict_proba(X))
-            w -= grads * MyMatrix([[eps]])
+            self.w -= grads * MyMatrix([[eps]])
 
-    def predict_proba(self, x):
-        return sigmoid(X * w)
+    def predict_proba(self, X):
+        return sigmoid(X * self.w)
 
     def get_gradient(self, X, y, predictions):
 
