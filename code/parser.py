@@ -2,6 +2,7 @@ from collections import defaultdict
 import ast
 from primitives import *
 
+
 class Parser:
 
     def get_max_nesting(self, current_node: ast.AST):
